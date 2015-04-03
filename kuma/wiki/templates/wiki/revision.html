@@ -52,6 +52,19 @@
       </div>
     </details>
 
+    <div class="wiki-block contributors">
+      {% set tags = document.tags.all() %}
+      <div class="tag-attach-list contributors-sub">
+        <i aria-hidden="true" class="icon-tags"></i>
+        <strong>{{_('Tags:')}}</strong>&nbsp;
+        <ul class="tags tags-small">
+          {% for tag in tags %}
+            <li><a href="{{ url('wiki.tag', tag) }}">{{ tag }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
     <details><div class="wiki-block">
       <h2><summary>{{ _('Revision Content') }}</summary></h2>
       <article id="wikiArticle" class="text-content">
